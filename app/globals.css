@@ -2,26 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base{
+    main{
+        @apply h-screen overflow-hidden bg-[url('/Checklist-pana.png')] bg-cover bg-no-repeat bg-center
+    }
+    .MainPageHeading{
+        @apply text-2xl font-bold
+    }
+    .MainPageDescription{
+        @apply text-5xl font-black md:px-28  text-black
+    }
+    .MainPageBody{
+        @apply grid space-y-4 bg-neutral-100/70 h-full p-4
+    }
+    .GetStartedButton{
+        @apply text-xl bg-neutral-700 text-white font-semibold rounded-md py-2 px-20
+    }
 }

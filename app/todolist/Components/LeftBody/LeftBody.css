@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    .MenuBody{
+        @apply absolute inset-y-0  p-4 bg-neutral-100 rounded-md flex flex-col h-full justify-between gap-2 z-10 lg:w-1/4
+    }
+    .MenuInput{
+        @apply flex items-center border rounded-md border-neutral-300 w-full p-1
+    }
+    .MenuItem{@apply h-full space-y-0.5}
+
+    .MenuItem>div{
+        @apply flex items-center rounded-md hover:bg-neutral-200 space-x-2 px-2 py-1 
+    }
+
+    .SelectedItem>*{
+        @apply font-bold text-black 
+    }
+    .MenuBreakLine{
+        @apply border-neutral-300 my-1 lg:my-0
+    }
+    .MenuButtons{
+        @apply  flex items-center hover:bg-neutral-200 w-fit rounded-md space-x-2 px-2 py-1
+    }
+    .SettingButton{
+        @apply py-0.5 px-2 border-neutral-400 border rounded-md mx-1 bg-neutral-200 text-sm
+    }
+}

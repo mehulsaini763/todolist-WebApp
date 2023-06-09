@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    .LoginPageBody{
+        @apply bg-neutral-200 rounded-md mx-auto flex flex-col justify-between lg:w-96 p-6 space-y-2
+    }
+    .LoginPageInput{
+        @apply border p-2 rounded-md w-full border-neutral-700 bg-neutral-50
+    }
+    .LoginPageButton{
+        @apply border p-2 rounded-md shadow-md border-neutral-700 bg-neutral-100
+    }
+    .LoginPageBreakLine{
+        @apply border-neutral-500 w-full my-4
+    }
+}

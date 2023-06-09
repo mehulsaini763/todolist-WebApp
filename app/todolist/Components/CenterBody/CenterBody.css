@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    .TaskBody{
+        @apply flex flex-col p-2 gap-2 lg:p-0 h-full overflow-hidden
+    }
+    .AddTaskButton,.TaskInput{
+        @apply  border border-neutral-400 rounded-md text-left flex items-center text-lg bg-neutral-100
+    }
+    .TaskInput>input{
+        @apply bg-neutral-100 focus:outline-none text-lg
+    }
+    .Task{
+        @apply flex items-center py-2 rounded-md hover:bg-neutral-100
+    }
+    .AddStickyWall{
+        @apply bg-neutral-100 hover:bg-neutral-200 rounded-md grid place-content-center h-fit sm:aspect-square
+    }
+    .StickyWallBody{
+        @apply rounded-md aspect-square overflow-hidden p-4 
+    }
+    .GridBody{
+        @apply grid  p-4 border border-neutral-300 rounded-md h-full overflow-auto
+    }
+}
