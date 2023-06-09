@@ -66,7 +66,7 @@ const EditStickyWall = (props) => {
         <div className="absolute inset-0 bg-neutral-500/50 z-20">
           <div className="flex items-center h-full p-2">
             <div
-              className={`${colorId} rounded-md max-w-[600px] mx-auto aspect-square rounded-md w-full`}
+              className={`${colorId} max-w-[600px] mx-auto aspect-square rounded-md w-full`}
             >
               <div className="flex justify-between bg-neutral-200 px-4 py-2 gap-4 rounded-t-md">
                 <div>
