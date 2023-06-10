@@ -39,7 +39,7 @@ const EditProfile = (props) => {
 
   return (
     <>
-      <div className="absolute inset-0 bg-neutral-100 p-4 flex flex-col gap-2">
+      <div className="absolute inset-0 bg-neutral-100 p-4 flex flex-col gap-2 dark:bg-neutral-900 rounded-md">
         <div className="text-center relative">
           {editProfile.photoURL != "" ? (
             <img
@@ -75,9 +75,9 @@ const EditProfile = (props) => {
             Remove
           </button>
         </div>
-        <hr className="border-neutral-400" />
+        <hr className="border-neutral-400 dark:bg-neutral-600" />
         <label className="block">
-          <span className="text-sm">Name</span>
+          <span className="text-sm dark:text-white">Name</span>
           <input
             className="EditTaskName"
             type="text"
@@ -88,10 +88,10 @@ const EditProfile = (props) => {
           />
         </label>
         <label className="block">
-          <span className="text-sm">Email</span>
+          <span className="text-sm dark:text-white">Email</span>
           <input
           disabled
-            className="EditTaskName disabled:bg-neutral-200"
+            className="EditTaskName disabled:bg-neutral-200 dark:disabled:bg-neutral-800"
             type="email"
             onChange={(e) =>
               setEditProfile({ ...editProfile, email: e.target.value })
@@ -112,7 +112,7 @@ const EditProfile = (props) => {
         </label>
         <div className="h-full"></div>
         <button
-          className="bg-neutral-800 font-semibold text-white rounded-md p-2"
+          className="bg-neutral-800 font-semibold text-white rounded-md p-2 dark:bg-neutral-200 dark:text-black"
           onClick={saveChanges}
         >
           Save Changes

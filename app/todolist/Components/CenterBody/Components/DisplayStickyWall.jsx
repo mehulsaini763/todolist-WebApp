@@ -11,26 +11,28 @@ const DisplayStickyWall = () => {
 
   return (
     <>
-      <h1 className="text-4xl lg:text-6xl font-black ">
+      <h1 className="font-bold text-4xl lg:text-6xl">
         {selectedItem.category}
       </h1>
-
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 overflow-auto p-4 border border-neutral-300 gap-4 rounded-md">
-        <AddStickyWall />
+      <hr className="border-none lg:my-1" />
+      <div className=" columns-2 sm:columns-3 lg:columns-4 rounded-md p-4 border border-neutral-300 space-y-4 h-full dark:border-neutral-700">
+       <AddStickyWall />
         {/* SHOW STICKY WALL */}
         {stickyWallsToShow.map((document) => (
-          <div key={document.documentId}
+          <div
+            key={document.documentId}
             onClick={() => {
               toggleState(true);
               setDocumentEdit(document);
             }}
-            className={`${document.colorId} aspect-square rounded-md p-4`}
+            className={`${document.colorId} rounded-md  max-h-60 p-2 break-inside-avoid`}
           >
-            <div className="h-full">
-              <h2 className="font-bold text-xl text-neutral-800 ">
+            <div className="max-h-56 overflow-hidden">
+              <h2 className="font-semibold text-xl text-neutral-800">
                 {document.heading}
               </h2>
-              <p className="text-neutral-800 leading-tight">{document.text}</p>
+
+              <div className="text-neutral-800 leading-tight">{document.text}</div>
             </div>
           </div>
         ))}

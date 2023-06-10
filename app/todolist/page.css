@@ -3,28 +3,36 @@
 @tailwind utilities;
 
 @layer base{
+    @font-face {
+        font-family: "Montserrat";
+        src: url("../../public/Montserrat-VariableFont_wght.ttf");
+      }
+
     .MobileHeader{
-       @apply flex items-center text-center bg-neutral-100 border-b border-neutral-400
+       @apply flex items-center text-center bg-neutral-100 border-b border-neutral-400 dark:bg-neutral-900 dark:border-neutral-600
     }
     .Icon{
-        @apply text-neutral-700 
+        @apply text-neutral-700 dark:text-neutral-300
     }
     .H2{
-        @apply text-2xl text-neutral-800 font-bold
+        @apply text-2xl text-neutral-800 font-bold dark:text-neutral-200
     }
     .H3{
-        @apply text-xs text-neutral-700 font-extrabold
+        @apply text-xs text-neutral-700 font-extrabold dark:text-neutral-300
     }
     .AddTagButton{
-        @apply flex items-center bg-neutral-200 rounded-md py-1 px-2 space-x-1 w-fit
+        @apply flex items-center bg-neutral-200 rounded-md py-1 px-2 gap-1 w-fit dark:bg-neutral-800
     }
     .Tag{
-        @apply text-xs font-bold text-black w-fit rounded-md py-1 px-2
+        @apply text-sm font-bold text-black w-fit rounded-md py-0.5 px-2 flex items-center gap-1
     }
     input{
         @apply focus:outline-none w-full
     }
     p{
-        @apply text-sm font-semibold text-neutral-700
+        @apply font-semibold text-neutral-700 dark:text-neutral-300
+    }
+    h1{
+        @apply dark:text-white
     }
 }

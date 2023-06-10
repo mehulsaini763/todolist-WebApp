@@ -49,18 +49,18 @@ const EditSubtasks = () => {
   }
 
   return (
-    <div className="h-full">
+    <div className="h-full space-y-1">
       <h2 className="H2">Subtask:</h2>
       {!state ? (
         <button className="AddSubtaskButton" onClick={toggleState}>
           <PlusIcon className="Icon mx-2 w-4 h-4" />
-          <p>Add New Subtask</p>
+          <p className="text-sm">Add New Subtask</p>
         </button>
       ) : (
-        <div className="AddSubtaskButton bg-neutral-200 text-sm">
+        <div className="AddSubtaskButton bg-neutral-200 text-sm dark:bg-neutral-800">
           <ArrowPathIcon className="Icon mx-2 w-4 h-4" />
           <input
-            className="bg-neutral-200 w-full focus:outline-none"
+            className="bg-neutral-200 w-full focus:outline-none dark:bg-neutral-800"
             autoFocus
             onBlur={toggleState}
             onChange={(e) => setSubtaskName(e.target.value)}
@@ -74,7 +74,7 @@ const EditSubtasks = () => {
           {subtask.subtaskCompleted ? (
             <CheckCircleIcon
                 onClick={() => updateSubtask(subtask.subtaskId,false)}
-              className="text-green-300 mx-2 w-4 h-4"
+              className="text-green-300 mx-2 w-4 h-4 "
             />
           ) : (
             <UncheckCircleIcon
@@ -82,12 +82,12 @@ const EditSubtasks = () => {
               className="Icon mx-2 w-4 h-4"
             />
           )}
-          <p className={`${subtask.subtaskCompleted && "line-through"} grow`}>
+          <p className={`${subtask.subtaskCompleted && "line-through"} grow text-sm`}>
             {subtask.subtaskName}
           </p>
           <TrashIcon
             onClick={() => deleteSubtask(subtask.subtaskId)}
-            className="mx-2 w-4 h-4"
+            className="mx-2 w-4 h-4 dark:text-white"
           />
         </div>
       ))}

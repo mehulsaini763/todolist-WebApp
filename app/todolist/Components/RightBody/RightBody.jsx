@@ -11,14 +11,14 @@ import EditTags from "./Components/EditTags";
 import EditSubtasks from "./Components/EditSubtasks";
 
 const RightBody = () => {
-  const {documentEdit, setSidebarState } = useContext(AppContext);
+  const { setSidebarState,setDocumentEdit } = useContext(AppContext);
 
   return (
     <div className="SidebarBody">
       <div className="flex items-center">
         <h2 className="H2 w-full">Task</h2>
         <XMarkIcon
-          onClick={() => setSidebarState(false)}
+          onClick={() => {setSidebarState(false);setDocumentEdit({})}}
           className="Icon w-6 h-6"
         />
       </div>
@@ -27,7 +27,7 @@ const RightBody = () => {
           <EditTaskName />
           <EditDescription />
         </div>
-        <div className="space-y-2 h-fit">
+        <div className="space-y-2 h-fit text-sm">
           <EditList />
           <EditDueDate />
           <EditTags />

@@ -8,7 +8,7 @@ const DisplayListTasks = () => {
 
   return (
     <>
-      <h1 className="text-4xl lg:text-6xl font-black">
+      <h1 className="font-bold text-4xl lg:text-6xl">
         {selectedItem.listName}
       </h1>
       <AddTask listName={selectedItem.listName} listId={selectedItem.listId} />

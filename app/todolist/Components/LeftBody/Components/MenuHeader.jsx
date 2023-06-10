@@ -36,21 +36,21 @@ const MenuHeader = () => {
         <h2 className="H2 text-left w-full">.todolist</h2>
         <Bars3Icon
           onClick={() => setMenuState(false)}
-          className="hidden lg:block w-6 h-6"
+          className="hidden lg:block w-6 h-6 dark:text-white"
         />
         <XMarkIcon
           onClick={() => setMenuState(false)}
-          className="lg:hidden w-6 h-6"
+          className="lg:hidden w-6 h-6 dark:text-white"
         />
       </div>
 
-      <div className="flex flex-col gap-1">
-        <div className="MenuInput">
-          <MagnifyingGlassIcon className="Icon h-6 w-6" />
+      <div className="flex flex-col gap-1 ">
+        <div className="MenuInput px-2">
+          <MagnifyingGlassIcon className="Icon h-6 w-6 dark:text-white" />
           <input
           ref={inputRef}
             type="text"
-            className="bg-neutral-100"
+            className="bg-neutral-100 dark:bg-neutral-900 dark:text-white"
             onFocus={() => toggleState(true)}
             onChange={(e) => setValue(e.target.value)}
             placeholder="Search"
@@ -58,13 +58,13 @@ const MenuHeader = () => {
         </div>
         <div>
           {state && (
-            <div className="absolute bg-neutral-50 rounded-md inset-x-0 mx-4 border">
+            <div className="absolute bg-neutral-50 rounded-md inset-x-0 mx-4 border dark:bg-neutral-950">
               {documentsToShow.map((document) => {
                 if (value.length > 0) {
                   return (
                     document.taskName.match(value) && (
                       <div
-                        className="m-2 px-2 py-1 hover:bg-neutral-100"
+                        className="m-2 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-900"
                         onClick={() => setTask(document)}
                       >
                         {document.taskName}

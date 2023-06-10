@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base{
     main{
         @apply h-screen overflow-hidden bg-[url('/Checklist-pana.png')] bg-cover bg-no-repeat bg-center

@@ -14,7 +14,7 @@ const Tasks = () => {
       <h3 className="H3">TASKS</h3>
       <div
         className={`${
-          selectedItem.category == "AllTasks" && "SelectedItem bg-neutral-200"
+          selectedItem.category == "AllTasks" && "SelectedItem bg-neutral-200  dark:bg-neutral-800"
         }`}
         onClick={() => {
           setSelectedItem({ category: "AllTasks" });
@@ -26,7 +26,7 @@ const Tasks = () => {
       </div>
       <div
         className={`${
-          selectedItem.category == "Today" && "SelectedItem bg-neutral-200"
+          selectedItem.category == "Today" && "SelectedItem bg-neutral-200 dark:bg-neutral-800"
         }`}
         onClick={() => {
           setSelectedItem({ category: "Today" });
@@ -38,7 +38,7 @@ const Tasks = () => {
       </div>
       <div
         className={`${
-          selectedItem.category == "StickyWall" && "SelectedItem bg-neutral-200"
+          selectedItem.category == "StickyWall" && "SelectedItem bg-neutral-200 dark:bg-neutral-800"
         }`}
         onClick={() => {
           setSelectedItem({ category: "StickyWalls" });

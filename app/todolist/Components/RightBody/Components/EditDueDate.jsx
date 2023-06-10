@@ -15,7 +15,7 @@ const EditDueDate = () => {
 
   return (
     <div className="flex">
-      <p className="w-1/4 lg:w-fit">Due Date</p>
+      <p className="w-1/3">Due Date</p>
       <div>
         <ReactDatePicker
           selected={dueDate != "" ? dueDate : date}

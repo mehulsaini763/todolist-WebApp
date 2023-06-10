@@ -4,27 +4,27 @@
 
 @layer base{
     .MenuBody{
-        @apply absolute inset-y-0  p-4 bg-neutral-100 rounded-md flex flex-col h-full justify-between gap-2 z-10 lg:w-1/4
+        @apply absolute inset-y-0 p-4 bg-neutral-100 rounded-md flex flex-col h-full w-full justify-between gap-2 z-10 lg:w-1/4 lg:relative dark:bg-neutral-900
     }
     .MenuInput{
-        @apply flex items-center border rounded-md border-neutral-300 w-full p-1
+        @apply flex items-center border rounded-md border-neutral-300 w-full p-1 gap-2 dark:border-neutral-700
     }
     .MenuItem{@apply h-full space-y-0.5}
 
     .MenuItem>div{
-        @apply flex items-center rounded-md hover:bg-neutral-200 space-x-2 px-2 py-1 
+        @apply flex items-center rounded-md hover:bg-neutral-200 p-1 px-2 gap-2 dark:hover:bg-neutral-800
     }
 
     .SelectedItem>*{
-        @apply font-bold text-black 
+        @apply font-bold text-black dark:text-white
     }
     .MenuBreakLine{
-        @apply border-neutral-300 my-1 lg:my-0
+        @apply border-neutral-300 my-1 lg:my-0 dark:border-neutral-700
     }
     .MenuButtons{
-        @apply  flex items-center hover:bg-neutral-200 w-fit rounded-md space-x-2 px-2 py-1
+        @apply  flex items-center hover:bg-neutral-200 w-fit rounded-md space-x-2 px-2 py-1 dark:hover:bg-neutral-800
     }
     .SettingButton{
-        @apply py-0.5 px-2 border-neutral-400 border rounded-md mx-1 bg-neutral-200 text-sm
+        @apply py-0.5 px-2 border-neutral-400 border rounded-md mx-1 bg-neutral-200 text-sm  dark:border-neutral-600 dark:bg-neutral-800
     }
 }

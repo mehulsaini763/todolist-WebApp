@@ -28,9 +28,9 @@ const EditTags = () => {
 
   return (
     <>
-      <div className="flex items-center">
-        <p className="w-1/4">Tags</p>
-        <div className="flex flex-wrap col-span-3 ml-2 space-x-1">
+      <div className="flex">
+        <p className="w-1/3">Tags</p>
+        <div className="flex flex-wrap gap-1">
           {tags?.map((tag) => (
             <div className={`${tag.colorId} Tag flex items-center`}>
               <p className="text-sm">{tag.tagName}</p>{" "}

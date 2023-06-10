@@ -7,7 +7,7 @@ const DisplayTaggedTasks = () => {
   const { documentsToShow, selectedItem } = useContext(AppContext);
   return (
     <>
-      <h1 className="text-4xl lg:text-6xl font-black">
+      <h1 className="font-bold text-4xl lg:text-6xl">
         {selectedItem.tagName}
       </h1>
       <AddTask tags={selectedItem} />

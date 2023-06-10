@@ -1,6 +1,6 @@
 import "./LeftBody.css";
 import { createContext, useContext } from "react";
-import { AppContext } from "../../page";
+// import { AppContext } from "../../page";
 import MenuHeader from "./Components/MenuHeader";
 import Tasks from "./Components/Tasks";
 import Lists from "./Components/Lists";
@@ -10,10 +10,10 @@ import MenuButtons from "./Components/MenuButtons"
 export const MenuContext = createContext();
 
 const LeftBody = () => {
-  const { menuState } = useContext(AppContext);
+  // const { menuState } = useContext(AppContext);
 
   return (
-    <div className={`MenuBody ${menuState ? "absolute lg:relative" : ""}`}>
+    <div className="MenuBody">
       <MenuHeader />
       <Tasks />
       <hr className="MenuBreakLine" />

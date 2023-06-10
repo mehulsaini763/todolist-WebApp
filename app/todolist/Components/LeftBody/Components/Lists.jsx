@@ -89,10 +89,10 @@ const Lists = () => {
           <p>Add New List</p>
         </div>
       ) : (
-        <div className="bg-neutral-200">
+        <div className="bg-neutral-200 dark:bg-neutral-800">
           <ArrowPathIcon className="Icon h-4 w-4" />
           <input
-            className="bg-neutral-200 focus:outline-none text-sm"
+            className="bg-neutral-200 focus:outline-none dark:bg-neutral-800 dark:text-white"
             type="text"
             autoFocus
             onBlur={toggleState}

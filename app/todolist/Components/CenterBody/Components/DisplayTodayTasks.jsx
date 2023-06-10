@@ -8,7 +8,7 @@ const DisplayTodayTasks = () => {
   const date = new Date();
   return (
     <>
-      <h1 className="text-4xl lg:text-6xl font-black">
+      <h1 className="font-bold text-4xl lg:text-6xl">
         {selectedItem.category}
       </h1>
       <AddTask listName={""} listId={""} />

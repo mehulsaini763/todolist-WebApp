@@ -47,13 +47,13 @@ const BottomButtons = () => {
     <>
       <button
         onClick={updateTask}
-        className="bg-yellow-300 rounded-md p-1 w-full"
+        className="bg-neutral-700 rounded-md p-1 w-full text-white dark:bg-neutral-300 dark:text-black" 
       >
         Save Changes
       </button>
       <button
         onClick={deleteTask}
-        className="bg-neutral-200 rounded-md p-1 w-full"
+        className="bg-neutral-200 rounded-md p-1 w-full dark:bg-neutral-800 dark:text-white"
       >
         Delete Task
       </button>

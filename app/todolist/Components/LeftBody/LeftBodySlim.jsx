@@ -11,9 +11,14 @@ import { signOut } from "firebase/auth";
 import { auth } from "@/app/firebase";
 import { useRouter } from "next/navigation";
 import { AppContext } from "../../page";
+import Settings from "./Components/Settings";
+import { useToggle } from "../../Hooks/useToggle";
+
+
 
 const LeftBodySlim = () => {
   const { setMenuState } = useContext(AppContext);
+  const [state, toggleState] = useToggle();
   const router = useRouter();
 
   const logOut = async () => {
@@ -21,7 +26,7 @@ const LeftBodySlim = () => {
     router.push("/");
   };
   return (
-    <div className="hidden lg:flex flex-col justify-between h-full p-4 rounded-md bg-neutral-100">
+    <div className="hidden lg:flex flex-col justify-between h-full p-4 rounded-md bg-neutral-100 dark:bg-neutral-900">
       <div>
         <Bars3Icon
           onClick={() => setMenuState(true)}
@@ -41,8 +46,11 @@ const LeftBodySlim = () => {
             )
           
         }
-        <div className="MenuSlimItems">
+        <div className="MenuSlimItems" onClick={()=>{
+          setMenuState(true)
+        }}>
           <AdjustmentsHorizontalIcon className="Icon h-6 w-6" />
+          {/* {state && <Settings toggleState={toggleState}/></div> } */}
         </div>
 
         {auth.currentUser == null ? (

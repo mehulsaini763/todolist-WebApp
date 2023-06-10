@@ -30,8 +30,6 @@ const page = () => {
     });
   }, []);
 
- 
-
   // STORE ALL DATA
   const [userInfo, setUserInfo] = useState(null);
   const [documentsToShow, setDocuments] = useState([]);
@@ -42,21 +40,23 @@ const page = () => {
   const [documentEdit, setDocumentEdit] = useState({});
   const [menuState, setMenuState] = useState(false);
   const [sidebarState, setSidebarState] = useState(false);
+  const [theme, setTheme] = useState("");
 
-  useEffect(()=>{
-    if(userInfo!==null){
+  useEffect(() => {
+    if (userInfo !== null) {
       getDocuments();
       getTags();
       getStickyWalls();
-  }
-  },[userInfo])
+      setTheme(userInfo.theme)
+    }
+  }, [userInfo]);
 
   const getUserInfo = async () => {
-    const docRef = doc(db, "users", auth.currentUser.uid)
-    const docSnap = await getDoc(docRef)
+    const docRef = doc(db, "users", auth.currentUser.uid);
+    const docSnap = await getDoc(docRef);
     const tempData = docSnap.data();
-        setUserInfo({ ...tempData, uid: auth.currentUser.uid });
-  }
+    setUserInfo({ ...tempData, uid: auth.currentUser.uid });
+  };
   // REFRESH DATABASE
   const getDocuments = async () => {
     const documents = [];
@@ -132,13 +132,19 @@ const page = () => {
         setSidebarState,
         documentEdit,
         setDocumentEdit,
+        theme,
+        setTheme,
       }}
     >
-      <div className="h-screen flex flex-col lg:p-4 lg:flex-row lg:gap-4">
-        <MobileHeader />
-        {menuState ? <LeftBody /> : <LeftBodySlim />}
-        <CenterBody />
-        {sidebarState && <RightBody />}
+      <div className={`${theme}`}>
+        <div
+          className={`flex flex-col h-screen lg:p-4 lg:flex-row lg:gap-4 font-montserrat dark:bg-black`}
+        >
+          <MobileHeader />
+          {menuState ? <LeftBody /> : <LeftBodySlim />}
+          <CenterBody />
+          {sidebarState && <RightBody />}
+        </div>
       </div>
     </AppContext.Provider>
   );

@@ -23,6 +23,8 @@ const SignInProviders = () => {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
     } else {
+      console.log("doesnt exist")
+      console.log(auth)
       await setDoc(doc(db, "users", auth.currentUser.uid), {
         userName: auth.currentUser.displayName,
         photoURL: auth.currentUser.photoURL,

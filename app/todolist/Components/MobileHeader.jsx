@@ -8,9 +8,9 @@ const MobileHeader = () => {
     <div className="MobileHeader lg:hidden">
       <Bars3Icon
         onClick={() => setMenuState(!menuState)}
-        className="absolute mx-2 w-6 h-6"
+        className="absolute mx-2 w-7 h-7 dark:text-white"
       />
-      <p className="grow text-2xl font-black text-black">.todolist</p>
+      <p className="grow text-3xl font-bold text-black dark:text-white">.todolist</p>
     </div>
   );
 };

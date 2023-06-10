@@ -39,12 +39,12 @@ const AddTask = (props) => {
     <>
       {!state ? (
         <button className="AddTaskButton" onClick={toggleState}>
-          <PlusIcon className="Icon m-2 w-5 h-5" />
+          <PlusIcon className="Icon w-5 h-5" />
           <p>Add New Task</p>
         </button>
       ) : (
         <div className="TaskInput">
-          <ArrowPathIcon className="Icon m-2 w-5 h-5" />
+          <ArrowPathIcon className="Icon w-5 h-5" />
           <input
             autoFocus
             onBlur={toggleState}

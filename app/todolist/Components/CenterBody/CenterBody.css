@@ -4,24 +4,24 @@
 
 @layer base{
     .TaskBody{
-        @apply flex flex-col p-2 gap-2 lg:p-0 h-full overflow-hidden
+        @apply flex flex-col p-2 gap-2 lg:p-0 h-full 
     }
     .AddTaskButton,.TaskInput{
-        @apply  border border-neutral-400 rounded-md text-left flex items-center text-lg bg-neutral-100
+        @apply  border border-neutral-400 rounded-md flex items-center text-lg bg-neutral-100 py-2 px-4 gap-4 dark:border-neutral-600 dark:bg-neutral-900
     }
     .TaskInput>input{
-        @apply bg-neutral-100 focus:outline-none text-lg
+        @apply bg-neutral-100 focus:outline-none text-lg dark:bg-neutral-900
     }
     .Task{
-        @apply flex items-center py-2 rounded-md hover:bg-neutral-100
+        @apply flex items-center p-2 rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-900
     }
     .AddStickyWall{
-        @apply bg-neutral-100 hover:bg-neutral-200 rounded-md grid place-content-center h-fit sm:aspect-square
+        @apply bg-neutral-100 hover:bg-neutral-200 rounded-md grid place-content-center h-fit absolute bottom-0 right-0 m-6 lg:m-8 p-2 dark:hover:bg-neutral-800 dark:bg-neutral-900
     }
     .StickyWallBody{
         @apply rounded-md aspect-square overflow-hidden p-4 
     }
     .GridBody{
-        @apply grid  p-4 border border-neutral-300 rounded-md h-full overflow-auto
+        @apply grid  p-4 border border-neutral-300 rounded-md h-full overflow-auto dark:border-neutral-700
     }
 }

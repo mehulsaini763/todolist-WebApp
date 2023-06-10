@@ -15,14 +15,19 @@ const AddStickyWall = () => {
   var date =
     temp.getDate() +
     " " +
+    temp.getMonth() +
+    " " +
+    temp.getFullYear() +
+    " " +
     temp.getHours() +
     ":" +
     temp.getMinutes() +
     ":" +
     temp.getSeconds();
-    
+
   // CREATE STICKY WALL
   const createStickyWall = async (e) => {
+    console.log(date);
     if (text != "" || heading != "") {
       e.target.value = "";
       toggleState(false);
@@ -46,63 +51,63 @@ const AddStickyWall = () => {
   };
 
   const colors = [
-    "bg-red-300",
-    "bg-orange-300",
-    "bg-yellow-300",
-    "bg-lime-300",
-    "bg-green-300",
-    "bg-emerald-300",
-    "bg-teal-300",
-    "bg-blue-300",
-    "bg-purple-300",
-    "bg-fuchsia-300",
+    "bg-red-200",
+    "bg-orange-200",
+    "bg-yellow-200",
+    "bg-lime-200",
+    "bg-green-200",
+    "bg-emerald-200",
+    "bg-teal-200",
+    "bg-blue-200",
+    "bg-purple-200",
+    "bg-fuchsia-200",
   ];
   return (
     <>
       {/* ADD STICKY WALL */}
       <div onClick={toggleState} className="AddStickyWall">
-        <PlusIcon className="m-2 w-6 h-6 md:h-10 md:w-10" />
+        <PlusIcon className="m-2 w-6 h-6 dark:text-white" />
       </div>
+
       {state && (
-        <div className="absolute inset-0 bg-neutral-500/50 z-20">
-          <div className="flex items-center h-full p-2">
-            <div
-              className={`${colorId} rounded-md max-w-[600px] mx-auto aspect-square w-full`}
-            >
-              <div className="flex justify-between bg-neutral-200 px-4 py-2 rounded-t-md">
-                <div>
-                  <DocumentIcon
-                    onClick={createStickyWall}
-                    className="w-5 h-5"
-                  />
-                </div>
-
-                <div className="flex mx-4 gap-2 overflow-auto">
-                  {colors.map((color) => (
-                    <div
-                      onClick={() => setColorId(color)}
-                      className={`${color} p-2.5 rounded-md`}
-                    ></div>
-                  ))}
-                </div>
-
-                <div>
-                  <XMarkIcon onClick={toggleState} className="w-6 h-6" />
-                </div>
+        <div className="absolute inset-0 grid place-content-center bg-neutral-500/50 z-20">
+          <div
+            className={`${colorId} aspect-square rounded-md overflow-hidden`}
+          >
+            <div className="flex justify-between bg-neutral-200 px-4 py-2 gap-4 dark:bg-neutral-800">
+              <div className="flex gap-2">
+                {colors.map((color) => (
+                  <div
+                    onClick={() => setColorId(color)}
+                    className={`${color} aspect-square w-5 h-5 rounded-full border-2 border-neutral-300 dark:border-neutral-700`}
+                  ></div>
+                ))}
               </div>
-              <div className="p-4 flex flex-col gap-2 h-full">
-                <input
-                  type="text"
-                  className={`${colorId} text-2xl md:text-4xl text-black`}
-                  placeholder="Title.."
-                  onChange={(e) => setHeading(e.target.value)}
+              <div className="flex gap-2">
+                <DocumentIcon
+                  onClick={createStickyWall}
+                  className="w-5 h-5 dark:text-white"
                 />
-                <textarea
-                  className={`${colorId} w-full h-full leading-snug resize-none focus:outline-none text-black`}
-                  placeholder="text.."
-                  onChange={(e) => setText(e.target.value)}
-                ></textarea>
+
+                <XMarkIcon
+                  onClick={toggleState}
+                  className="w-6 h-6 dark:text-white"
+                />
               </div>
+            </div>
+
+            <div className="p-4 flex flex-col gap-2 h-full">
+              <input
+                type="text"
+                className={`${colorId} text-2xl md:text-4xl text-black `}
+                placeholder="Title.."
+                onChange={(e) => setHeading(e.target.value)}
+              />
+              <textarea
+                className={`${colorId} w-full h-full leading-snug resize-none focus:outline-none text-black `}
+                placeholder="text.."
+                onChange={(e) => setText(e.target.value)}
+              ></textarea>
             </div>
           </div>
         </div>

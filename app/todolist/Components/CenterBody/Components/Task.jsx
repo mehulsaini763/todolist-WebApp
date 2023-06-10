@@ -7,7 +7,7 @@ import { doc, setDoc } from "firebase/firestore";
 import {v4 as uuid} from "uuid"
 
 const Task = (props) => {
-  const { getDocuments, setDocumentEdit, setSidebarState } =
+  const { getDocuments, documentEdit, setDocumentEdit, setSidebarState } =
     useContext(AppContext);
   const document = props.document;
   //UPDATE TASK
@@ -30,7 +30,7 @@ const Task = (props) => {
   };
   return (
     <>
-      <div className="Task" key={uuid()}>
+      <div className={`${documentEdit.taskId==document.taskId&&"bg-neutral-100 dark:bg-neutral-900"} Task`} key={uuid()}>
         {document.taskCompleted ? (
           <CheckCircleIcon
             onClick={() => updateTask(false)}
@@ -44,11 +44,11 @@ const Task = (props) => {
         )}
         <p
           onClick={someFunction}
-          className={`${document.taskCompleted && "line-through"} grow py-1 `}
+          className={` ${document.taskCompleted && "line-through"} grow py-1 `}
         >
           {document.taskName}
         </p>
-        <ArrowRightIcon className="mx-3 w-5 h-5" />
+        <ArrowRightIcon className="mx-3 w-5 h-5 dark:text-white" />
       </div>
     </>
   );

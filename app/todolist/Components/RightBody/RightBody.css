@@ -4,25 +4,25 @@
 
 @layer base{
     .SidebarBody{
-        @apply absolute bottom-0 inset-x-0 max-w-[500px] h-1/2 mx-auto p-4 bg-neutral-100 flex flex-col rounded-md gap-2 justify-between lg:w-1/4 lg:static lg:h-full
+        @apply absolute bottom-0 max-w-[500px] h-1/2 mx-auto p-4 bg-neutral-100 flex flex-col rounded-md gap-2 justify-between lg:w-1/4 lg:static lg:h-full dark:bg-neutral-900
     }
     .SidebarSubBody{
-        @apply overflow-auto border border-neutral-500 py-2 rounded-md lg:border-none lg:p-0
+        @apply overflow-auto border border-neutral-400 py-2 rounded-md lg:border-none lg:p-0 dark:border-neutral-600
     }
     .EditTaskName,.Description{
-        @apply w-full bg-neutral-100 border border-neutral-400 px-2 py-1 rounded-md resize-none text-neutral-600 focus:text-neutral-800 focus:outline-none
+        @apply w-full bg-neutral-100 border border-neutral-400 px-2 py-1 rounded-md resize-none text-neutral-600 focus:text-neutral-800 focus:outline-none dark:bg-neutral-900 dark:border-neutral-600 dark:focus:text-neutral-200 dark:text-white
     }
     .SelectMenu{
-        @apply bg-neutral-200 mx-2 col-span-3 w-24 text-sm text-center px-2 py-0.5 rounded-md
+        @apply bg-neutral-200 mx-2 col-span-3 w-24 text-sm text-center px-2 py-0.5 rounded-md dark:bg-neutral-800 dark:text-neutral-300
     }
     .AddTagBody{
-        @apply flex flex-wrap text-xs border-t border-neutral-400 py-1 my-1 overflow-auto
+        @apply flex flex-wrap text-xs border-t border-neutral-400 py-1 my-1 overflow-auto gap-1 dark:border-neutral-600
     }
     .AddSubtaskButton{
-        @apply flex items-center hover:bg-neutral-200 w-full rounded-md py-1
+        @apply flex items-center hover:bg-neutral-200 w-full rounded-md py-1 dark:hover:bg-neutral-800
     }
     .Subtask{
-        @apply flex items-center hover:bg-neutral-200 w-full rounded-md py-1
+        @apply flex items-center hover:bg-neutral-200 w-full rounded-md py-1 dark:hover:bg-neutral-800
     }
 }
 

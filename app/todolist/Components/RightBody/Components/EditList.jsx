@@ -13,7 +13,7 @@ const EditList = () => {
 
   return (
     <div className="flex">
-      <p className="w-1/4">List</p>
+      <p className="w-1/3">List</p>
 
       <select 
       onChange={(e)=>{

@@ -58,12 +58,12 @@ const Tags = () => {
         {tagsToShow.map((tag) => (
           <div
           key={tag.tagId}
-            className={`${tag.colorId} Tag flex items-center`}
+            className={`${tag.colorId} Tag`}
             onClick={() => {
               setSelectedItem(tag);
             }}
           >
-            <p className="text-sm">{tag.tagName}</p>{" "}
+            {tag.tagName}
             <XMarkIcon
               onClick={() => deleteTag(tag.tagId)}
               className="w-3 h-3"
@@ -73,13 +73,13 @@ const Tags = () => {
         {!state ? (
           <div onClick={toggleState} className="AddTagButton">
             <PlusIcon className="Icon h-3 w-3" />
-            <p className="text-xs">Add Tag</p>
+            <p className="text-sm">Add Tag</p>
           </div>
         ) : (
           <div className="AddTagButton">
             <ArrowPathIcon className="Icon w-3 h-3" />
             <input
-              className="bg-neutral-200 text-xs w-14 focus:outline-none"
+              className="bg-neutral-200 text-sm w-14 focus:outline-none dark:bg-neutral-800 dark:text-white"
               autoFocus
               onBlur={toggleState}
               onChange={getTagName}
