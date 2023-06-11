@@ -1,5 +1,24 @@
+"use client"
 import Link from "next/link";
+import { auth } from "@/app/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
+
 export default function Home() {
+  const router = useRouter();
+
+  // AUTHENTICATION CHECK
+
+  useEffect(() => {
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        // User is signed in.
+       router.push("/todolist")
+      }
+    });
+  }, []);
   return (
     <main>
       <div className="MainPageBody">

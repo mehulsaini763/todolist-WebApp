@@ -5,6 +5,7 @@ const EditDescription = () => {
   const { documentEdit , setDocumentEdit} = useContext(AppContext);
   const [description, setDescription] = useState(documentEdit.description!=""?documentEdit.description:"Description");
   
+
   useEffect(() => {
     setDocumentEdit({...documentEdit,description: description});
   }, [description]);
@@ -14,8 +15,10 @@ const EditDescription = () => {
       <textarea
         className="Description"
         onChange={(e) => setDescription(e.target.value)}
+        onFocus={()=>description=="Description"&&setDescription("")}
         rows={3}
         value={description}
+
       ></textarea>
     </>
   );

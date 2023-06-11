@@ -60,7 +60,7 @@ const EditSubtasks = () => {
         <div className="AddSubtaskButton bg-neutral-200 text-sm dark:bg-neutral-800">
           <ArrowPathIcon className="Icon mx-2 w-4 h-4" />
           <input
-            className="bg-neutral-200 w-full focus:outline-none dark:bg-neutral-800"
+            className="bg-neutral-200 w-full focus:outline-none dark:bg-neutral-800 dark:text-white"
             autoFocus
             onBlur={toggleState}
             onChange={(e) => setSubtaskName(e.target.value)}

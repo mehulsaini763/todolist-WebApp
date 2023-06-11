@@ -28,6 +28,7 @@ const SignInProviders = () => {
       await setDoc(doc(db, "users", auth.currentUser.uid), {
         userName: auth.currentUser.displayName,
         photoURL: auth.currentUser.photoURL,
+        email: auth.currentUser.email
       });
       checkUser();
     }

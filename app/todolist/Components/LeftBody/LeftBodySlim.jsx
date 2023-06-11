@@ -11,14 +11,11 @@ import { signOut } from "firebase/auth";
 import { auth } from "@/app/firebase";
 import { useRouter } from "next/navigation";
 import { AppContext } from "../../page";
-import Settings from "./Components/Settings";
-import { useToggle } from "../../Hooks/useToggle";
 
 
 
 const LeftBodySlim = () => {
-  const { setMenuState } = useContext(AppContext);
-  const [state, toggleState] = useToggle();
+  const { setMenuState,userInfo } = useContext(AppContext);
   const router = useRouter();
 
   const logOut = async () => {
@@ -34,18 +31,14 @@ const LeftBodySlim = () => {
         />
       </div>
       <div className="space-y-3">
-        {auth.currentUser && 
-          
-            auth.currentUser.photoURL ? (
-              <img
-                className="h-6 w-6 rounded-full"
-                src={auth.currentUser.photoURL}
-              />
-            ) : (
-              <UserCircleIcon className="Icon h-6 w-6" />
-            )
-          
-        }
+      {userInfo?.photoURL != "" ? (
+          <img
+            className="Icon h-28 w-28 mx-auto rounded-full object-cover"
+            src={userInfo?.photoURL}
+          />
+        ) : (
+          <UserCircleIcon className="Icon h-6 w-6 mx-auto" />
+        )}
         <div className="MenuSlimItems" onClick={()=>{
           setMenuState(true)
         }}>

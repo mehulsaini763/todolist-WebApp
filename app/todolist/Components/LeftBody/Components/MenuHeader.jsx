@@ -1,4 +1,4 @@
-import React, { useContext,useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import {
   MagnifyingGlassIcon,
   Bars3Icon,
@@ -24,7 +24,7 @@ const MenuHeader = () => {
     await setDocumentEdit(document);
     await setSidebarState(false);
     await setSidebarState(true);
-    inputRef.current.value=""
+    window.innerWidth>1024&& inputRef.current.value == "";
     setValue("");
     // setMenuState(false);
     toggleState(false);
@@ -48,7 +48,7 @@ const MenuHeader = () => {
         <div className="MenuInput px-2">
           <MagnifyingGlassIcon className="Icon h-6 w-6 dark:text-white" />
           <input
-          ref={inputRef}
+            ref={inputRef}
             type="text"
             className="bg-neutral-100 dark:bg-neutral-900 dark:text-white"
             onFocus={() => toggleState(true)}
@@ -64,8 +64,11 @@ const MenuHeader = () => {
                   return (
                     document.taskName.match(value) && (
                       <div
-                        className="m-2 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-900"
-                        onClick={() => setTask(document)}
+                        className="m-2 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-900 dark:text-white"
+                        onClick={() => {
+                          setTask(document);
+                          window.innerWidth < 1024 && setMenuState(false);
+                        }}
                       >
                         {document.taskName}
                       </div>

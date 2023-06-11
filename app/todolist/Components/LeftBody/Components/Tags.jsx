@@ -63,7 +63,7 @@ const Tags = () => {
               setSelectedItem(tag);
             }}
           >
-            {tag.tagName}
+            <p className="text-sm">{tag.tagName}</p>{" "}
             <XMarkIcon
               onClick={() => deleteTag(tag.tagId)}
               className="w-3 h-3"
@@ -79,7 +79,7 @@ const Tags = () => {
           <div className="AddTagButton">
             <ArrowPathIcon className="Icon w-3 h-3" />
             <input
-              className="bg-neutral-200 text-sm w-14 focus:outline-none dark:bg-neutral-800 dark:text-white"
+              className="bg-neutral-200 text-sm w-14 focus:outline-none"
               autoFocus
               onBlur={toggleState}
               onChange={getTagName}

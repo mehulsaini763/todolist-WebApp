@@ -4,7 +4,7 @@
 
 @layer base{
     .SidebarBody{
-        @apply absolute bottom-0 max-w-[500px] h-1/2 mx-auto p-4 bg-neutral-100 flex flex-col rounded-md gap-2 justify-between lg:w-1/4 lg:static lg:h-full dark:bg-neutral-900
+        @apply fixed bottom-0 inset-x-0 max-w-[500px] h-1/2 mx-auto p-4 bg-neutral-100 flex flex-col rounded-md gap-2 justify-between lg:w-1/4 lg:static lg:h-full dark:bg-neutral-900
     }
     .SidebarSubBody{
         @apply overflow-auto border border-neutral-400 py-2 rounded-md lg:border-none lg:p-0 dark:border-neutral-600

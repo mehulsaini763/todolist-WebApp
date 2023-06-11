@@ -46,6 +46,7 @@ const AddTask = (props) => {
         <div className="TaskInput">
           <ArrowPathIcon className="Icon w-5 h-5" />
           <input
+          className="dark:text-white"
             autoFocus
             onBlur={toggleState}
             onChange={(e)=>setTaskName(e.target.value)}

@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AppContext } from "../../../page";
 
 const BottomButtons = () => {
-  const { getDocuments, documentEdit, setSidebarState } =
+  const { getDocuments, documentEdit, setSidebarState,setDocumentEdit } =
     useContext(AppContext);
 
   //UPDATE TASK
@@ -24,6 +24,7 @@ const BottomButtons = () => {
         ),
         documentEdit
       );
+      setDocumentEdit({})
       setSidebarState(false);
       getDocuments();
     }

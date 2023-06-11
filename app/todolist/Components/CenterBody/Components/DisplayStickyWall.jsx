@@ -15,7 +15,7 @@ const DisplayStickyWall = () => {
         {selectedItem.category}
       </h1>
       <hr className="border-none lg:my-1" />
-      <div className=" columns-2 sm:columns-3 lg:columns-4 rounded-md p-4 border border-neutral-300 space-y-4 h-full dark:border-neutral-700">
+      <div className="relative columns-2 sm:columns-3 lg:columns-4 rounded-md p-4 border border-neutral-300 h-full dark:border-neutral-700">
        <AddStickyWall />
         {/* SHOW STICKY WALL */}
         {stickyWallsToShow.map((document) => (
@@ -25,7 +25,7 @@ const DisplayStickyWall = () => {
               toggleState(true);
               setDocumentEdit(document);
             }}
-            className={`${document.colorId} rounded-md  max-h-60 p-2 break-inside-avoid`}
+            className={`${document.colorId} rounded-md  max-h-60 p-2 break-inside-avoid mb-4`}
           >
             <div className="max-h-56 overflow-hidden">
               <h2 className="font-semibold text-xl text-neutral-800">

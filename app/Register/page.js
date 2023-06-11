@@ -43,6 +43,7 @@ const page = () => {
     await setDoc(doc(db, "users", auth.currentUser.uid), {
       userName: name,
       photoURL: auth.currentUser.photoURL,
+      email: auth.currentUser.email
     });
   };
   return (

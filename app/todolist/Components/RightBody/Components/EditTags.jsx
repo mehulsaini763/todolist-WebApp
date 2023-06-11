@@ -33,7 +33,7 @@ const EditTags = () => {
         <div className="flex flex-wrap gap-1">
           {tags?.map((tag) => (
             <div className={`${tag.colorId} Tag flex items-center`}>
-              <p className="text-sm">{tag.tagName}</p>{" "}
+              <p className="text-sm dark:text-black">{tag.tagName}</p>{" "}
               <XMarkIcon
                 onClick={() => deleteTag(tag.tagId)}
                 className="w-3 h-3"
@@ -51,7 +51,7 @@ const EditTags = () => {
           {tagsToShow.map((tag) => (
             <div
               onClick={()=>addTag(tag)}
-              className={`${tag.colorId} Tag`}
+              className={`${tag.colorId} Tag `}
             >
               {tag.tagName}
             </div>
