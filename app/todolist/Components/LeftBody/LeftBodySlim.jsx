@@ -33,7 +33,7 @@ const LeftBodySlim = () => {
       <div className="space-y-3">
       {userInfo?.photoURL != "" ? (
           <img
-            className="Icon h-28 w-28 mx-auto rounded-full object-cover"
+            className="Icon h-6 w-6 mx-auto rounded-full object-cover"
             src={userInfo?.photoURL}
           />
         ) : (
